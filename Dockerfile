@@ -20,3 +20,10 @@ COPY yarn.lock /app/yarn.lock
 RUN bundle install
 RUN yarn install
 COPY . /app
+
+# entrypoint.shを/app/entrypoint.shとしてコピー
+COPY ./entrypoint.sh /app/entrypoint.sh
+# entrypoint.shを実行可能にする
+RUN chmod +x /app/entrypoint.sh
+# entrypoint.shをエントリーポイントとして設定
+ENTRYPOINT ["/app/entrypoint.sh"]
