@@ -11,16 +11,16 @@
     <div class='collapse navbar-collapse' id='navbarSupportedContent'>
       <ul class='navbar-nav ms-auto main-nav align-items-center'>
         <li class='nav-item dropdown dropdown-slide'>
-          <%# <%= link_to t('header.board'), '#', class: 'nav-link dropdown-toggle', data: { bs_toggle: 'dropdown' }, aria: { haspopup: 'true', expanded: 'false' }, id: 'header-board-menu' %> %>
+          <%= link_to t('header.item'), '#', class: 'nav-link dropdown-toggle', data: { bs_toggle: 'dropdown' }, aria: { haspopup: 'true', expanded: 'false' }, id: 'header-item-menu' %>
           <div class='dropdown-menu dropdown-menu-end'>
-            <%# <%= link_to t('header.board_index'), boards_path, class: 'dropdown-item' %> %>
-            <%# <%= link_to t('header.create_board'), '/boards/new', class: 'dropdown-item' %> %>
+            <%= link_to t('header.item_index'), items_path, class: 'dropdown-item' %>
+            <%= link_to t('header.create_item'), '/items/new', class: 'dropdown-item' %>
           </div>
         </li>
 
         <li class='nav-item'>
-          done
-          <%# <%= link_to t('header.bookmark_index'), bookmarks_boards_path, class: 'nav-link' %> %>
+        <%# ↓　dones_path %>
+          <%= link_to t('header.done_index'), "#", class: 'nav-link' %>
         </li>
 
         <li class='nav-item dropdown dropdown-slide'>
@@ -29,7 +29,8 @@
           <% end %>
           <div class='dropdown-menu dropdown-menu-end'>
             <div class='dropdown-divider'></div>
-            <%# <%= link_to t('header.profile'), profile_path, class: 'dropdown-item' %> %>
+            <%# 'users/show' %>
+            <%= link_to t('header.user_show'), '#', class: 'dropdown-item' %>
             <%= link_to t('header.logout'), logout_path, class: 'dropdown-item', data: { turbo_method: :delete } %>
           </div>
         </li>
