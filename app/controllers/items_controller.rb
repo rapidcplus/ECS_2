@@ -1,4 +1,4 @@
-class ItemController < ApplicationController
+class ItemsController < ApplicationController
   before_action :set_item, only: %i[edit update destroy]
 
   def index

@@ -8,4 +8,8 @@ class Item < ApplicationRecord
   # 説明欄は必須ではない
   validates :description, length: { maximum: 255 }, allow_blank: true
 
+  # def youtube_video_id
+  #   uri = URI.parse(self.item_url)
+  #   uri.path.split('/').last
+  # end
 end
