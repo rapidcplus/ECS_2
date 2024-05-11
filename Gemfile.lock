@@ -268,13 +268,13 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
-  bootstrap (~> 5.3.3)
+  bootstrap (~> 5.3)
   capybara
   cssbundling-rails
   dartsass-rails (~> 0.4.0)
   debug
   jbuilder
-  jquery-rails
+  jquery-rails (~> 4.6)
   jsbundling-rails
   pg (~> 1.1)
   puma (~> 5.0)

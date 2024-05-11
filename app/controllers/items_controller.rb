@@ -2,7 +2,8 @@ class ItemsController < ApplicationController
   before_action :set_item, only: %i[edit update destroy]
 
   def index
-    @items = Item.includes(:user).order(created_at: :desc)
+    @items = current_user.items.order(created_at: :desc)
+    # @items = Item.includes(:user).order(created_at: :desc)
   end
 
   def show
@@ -39,6 +40,9 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    item = current_user.items.find(params[:id])
+    item.destroy!
+    redirect_to items_url, success: t('defaults.flash_message.deleted', item: Item.model_name.human), status: :see_other
   end
 
   private
