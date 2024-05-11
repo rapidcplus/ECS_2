@@ -16,10 +16,10 @@ ja:
     delete: 削除
     flash_message:
       created: "%{item}を作成しました"
-      not_created: "%{item}を作成出来ませんでした"
+      not_created: "%{item}を作成できませんでした"
       require_login: ログインしてください
       updated: "%{item}を更新しました"
-      not_updated: "%{item}を更新出来ませんでした"
+      not_updated: "%{item}を更新できませんでした"
       deleted: "%{item}を削除しました"
       delete_confirm: 削除しますか？
       no_item: アイテムがありません

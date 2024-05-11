@@ -18,21 +18,32 @@ class ItemsController < ApplicationController
     @item = current_user.items.find(params[:id])
   end
 
+  # def create
+  #   @item = Item.new(item_params)
+  #   @item.user_id = current_user.id
+  #   if @item.save
+  #     redirect_to items_url, flash: { success: t('defaults.flash_message.created', item: Item.model_name.human) }
+  #   else
+  #     flash.now[:danger] = t('defaults.flash_message.not_created', item: Item.model_name.human)
+  #     render :new, status: :unprocessable_entity
+  #   end
+  # end
+
   def create
     @item = Item.new(item_params)
     @item.user_id = current_user.id
     if @item.save
-      redirect_to items_url, success: t('items.create.success')
+      flash[:success] = "アイテムを作成しました"
+      redirect_to items_url
     else
-      flash.now[:danger] = t('items.create.failure')
+      flash.now[:danger] = "アイテムの作成に失敗しました"
       render :new, status: :unprocessable_entity
     end
   end
 
   def update
-    @item = current_user.items.find(params[:id])
     if @item.update(item_params)
-      redirect_to items_url(@item), success: t('defaults.flash_message.updated', item: Item.model_name.human)
+      redirect_to item_url(@item), flash: { success: t('defaults.flash_message.updated', item: Item.model_name.human) }
     else
       flash.now[:danger] = t('defaults.flash_message.not_updated', item: Item.model_name.human)
       render :edit, status: :unprocessable_entity
@@ -40,9 +51,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item = current_user.items.find(params[:id])
-    item.destroy!
-    redirect_to items_url, success: t('defaults.flash_message.deleted', item: Item.model_name.human), status: :see_other
+    @item.destroy
+    redirect_to items_url, flash: { success: t('defaults.flash_message.deleted', item: Item.model_name.human) }
   end
 
   private
@@ -51,7 +61,11 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:title, :description, :item_url)
   end
 
+  # def set_item
+  #   @item = Item.find(params[:id])
+  # end
+
   def set_item
-    @item = Item.find(params[:id])
+    @item = current_user.items.find(params[:id])
   end
 end
