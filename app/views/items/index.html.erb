@@ -18,7 +18,7 @@
         <% if @items.present? %>
 		  <%= render @items %>
 		<% else %>
-		  <p>アイテムがありません。</p>
+		  <p><%= t('defaults.flash_message.no_item') %></p>
 		<% end %>
         <%# <%= paginate @items, theme: 'bootstrap-5' %> 
       </div>
