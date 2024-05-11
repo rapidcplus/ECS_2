@@ -1,4 +1,5 @@
 <%= form_with model: @item do |f| %>
+  <%# <%= render 'shared/error_messages', object: f.object %>
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control', placeholder: '例：心臓マッサージ' %>
@@ -17,9 +18,8 @@
     <%= f.label :item_url %>
     <%= f.text_field :item_url, class: 'form-control', id: 'item_url' %>
   </div>
-
   <div class="actions">
-    <%= f.submit '作成', class: 'btn btn-primary' %>
+    <%= f.submit class: 'btn btn-primary' %>
   </div>
   <div id="preview"></div>
 <% end %>
