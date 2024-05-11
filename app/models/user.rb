@@ -8,4 +8,9 @@ class User < ApplicationRecord
   validates :email, uniqueness: true, presence: true
   validates :name, presence: true, length: { maximum: 255 }
 
+  has_many :items, dependent: :destroy
+
+  def own?(item)
+    self.id == item.user_id
+end
 end
