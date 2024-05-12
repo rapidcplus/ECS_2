@@ -1,4 +1,4 @@
-<h1>アイテム一覧</h1>
+<h1><%= t('.title') %></h1>
 <div class="container pt-3">
   <!-- 検索フォーム -->
   <div class="row">
@@ -18,7 +18,7 @@
         <% if @items.present? %>
 		  <%= render @items %>
 		<% else %>
-		  <p>アイテムがありません。</p>
+		  <p><%= t('defaults.flash_message.no_item') %></p>
 		<% end %>
         <%# <%= paginate @items, theme: 'bootstrap-5' %> 
       </div>

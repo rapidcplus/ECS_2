@@ -11,11 +11,11 @@ class UserSessionsController < ApplicationController
       flash.now[:danger] = t('user_sessions.create.failure')
       render :new, status: :unprocessable_entity
     end
-             end
+  end
 
-   def destroy
+  def destroy
       logout
- flash[:danger] = t('user_sessions.destroy.success')
+      flash[:danger] = t('user_sessions.destroy.success')
       redirect_to root_path, status: :see_other
-    end
+  end
 end

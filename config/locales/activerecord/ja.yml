@@ -1,0 +1,33 @@
+ja:
+  activerecord:
+    enums:
+      user:
+        role:
+          general: 一般
+          admin: 管理者  
+    models:
+      user: ユーザー
+      item: アイテム
+    attributes:
+      user:
+        email: メールアドレス
+        name: ユーザー名
+        password: パスワード
+        password_confirmation: パスワード確認
+        message_template: メッセージテンプレート
+      item:
+        title: タイトル
+        description: 説明欄
+        preview: プレビュー
+        item_url: URL
+        tag: タグ
+  attributes:
+    id: ID
+    created_at: 作成日時
+    updated_at: 更新日時
+  enums:
+    user:
+      role:
+        general: 一般
+        admin: 管理者
+        

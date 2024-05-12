@@ -1,0 +1,13 @@
+ja:
+  flash:
+    notice:
+      login_success: 'ログインに成功しました'
+      password_incorrect: 'メールまたはパスワードが間違っています'
+
+  flash:
+    alert:
+      invalid_credentials: 'メールまたはパスワードが間違っています'
+
+  flash:
+    notice:
+      logout_success: 'ログアウトしました'

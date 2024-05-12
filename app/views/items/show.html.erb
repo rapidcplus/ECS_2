@@ -1,5 +1,4 @@
-<h1>アイテム詳細</h1>
-<%# <% content_for(:title, @item.title) %>
+<h1><%= t('.title') %></h1>
 <div class="container pt-5">
   <div class="row mb-3">
     <div class="col-lg-8 offset-lg-2">
@@ -19,32 +18,22 @@
             <div class="col-md-9">
               <h3 style="display: inline;"><%= @item.title %></h3>
               <ul class="list-inline">
-                 <%= @item.title %>
-                 <%= @item.description %>
-                 <%= @item.item_url %>
+                <%= @item.description %>
               </ul>
-              <!-- 編集ボタンをダブルクォーテーションにしてる-->
-              <%# <% if current_user.own?(@item) %>
-              <%# <div class='d-flex justify-content-end'> %>
-                <%# <%= link_to edit_item_path(@item), id: "button-edit-#{@item.id}" do %> 
-                  <%# <i class="bi bi-pencil-fill"></i> %>
-                <%# <% end %> 
-                <%# <%= link_to item_path(@item), id: "button-delete-#{@item.id}", data: { turbo_method: :delete, turbo_confirm: t('defaults.flash_message.delete_confirm') } do %> 
-                  <%# <i class="bi bi-trash-fill"></i> %>
-                <%# <% end %> 
-              <%# </div> %>
-              <%# <% end %> 
+              <ul class="list-inline">
+                <%= @item.item_url %>
+              </ul>
               <ul class='d-flex justify-content-end'>
-  <li class="list-inline-item">
-    <%= link_to '編集', edit_item_path(@item), id: "button-edit-#{@item.id}" %>
-  </li>
-  <li class="list-inline-item">
-    <%= link_to '削除', item_path(@item),
-                id: "button-delete-#{@item.id}",
-                method: :delete,
-                data: { turbo_method: :delete, turbo_confirm: t('defaults.flash_message.delete_confirm') } %>
-  </li>
-</ul>
+                <li class="list-inline-item">
+                  <%= link_to t('defaults.edit'), edit_item_path(@item), id: "button-edit-#{@item.id}" %>
+                </li>
+                <li class="list-inline-item">
+                  <%= link_to t('defaults.delete'), item_path(@item),
+                              id: "button-delete-#{@item.id}",
+                              method: :delete,
+                              data: { turbo_method: :delete, turbo_confirm: t('defaults.flash_message.delete_confirm') } %>
+                </li>
+              </ul>
             </div>
           </div>
         </article>

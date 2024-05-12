@@ -52,13 +52,18 @@ gem "bootsnap", require: false
 gem "dartsass-rails", "~> 0.4.0"
 
 # bootstrap
-gem 'bootstrap', '~> 5.3'
+# gem 'bootstrap', '~> 5.3'
+gem 'bootstrap-sass'
+gem "sassc-rails"
+
 gem 'jquery-rails', '~> 4.6'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
 gem "sorcery"
+
+gem 'rails-i18n', '~> 7.0.0'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
