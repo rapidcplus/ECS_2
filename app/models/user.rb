@@ -12,5 +12,5 @@ class User < ApplicationRecord
 
   def own?(item)
     self.id == item.user_id
-end
+  end
 end

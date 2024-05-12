@@ -11,9 +11,10 @@ ja:
     attributes:
       user:
         email: メールアドレス
-        name: 名前
+        name: ユーザー名
         password: パスワード
         password_confirmation: パスワード確認
+        message_template: メッセージテンプレート
       item:
         title: タイトル
         description: 説明欄

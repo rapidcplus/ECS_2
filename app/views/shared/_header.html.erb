@@ -28,11 +28,10 @@
             <%= current_user.name %>
           <% end %>
           <div class='dropdown-menu dropdown-menu-end'>
-            <div class='dropdown-divider'></div>
-            <%# 'users/show' %>
-            <%= link_to t('header.user_show'), '#', class: 'dropdown-item' %>
-            <%= link_to t('header.logout'), logout_path, class: 'dropdown-item', data: { turbo_method: :delete } %>
-          </div>
+  <div class='dropdown-divider'></div>
+  <%= link_to t('header.user_show'), user_path(current_user), class: 'dropdown-item' %>
+  <%= link_to t('header.logout'), logout_path, class: 'dropdown-item', data: { turbo_method: :delete } %>
+</div>
         </li>
       </ul>
     </div>
