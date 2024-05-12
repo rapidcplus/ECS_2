@@ -53,8 +53,14 @@ ja:
       failure: ユーザー登録に失敗しました
     show:
       title: ユーザー情報
+      edit: ユーザー情報の編集
+      change_password: パスワードの変更はこちら
     edit:
       title: ユーザー情報編集
+    edit_password:
+      title: パスワード変更
+      password: パスワード
+      password_confirmation: パスワード確認
   items:
     new:
       title: アイテム新規作成

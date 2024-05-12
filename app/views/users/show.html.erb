@@ -17,7 +17,9 @@
           <td><%= @user.message_template %></td>
         </tr>
       </table>
-      <%= link_to t('defaults.edit'), edit_user_path(@user), class: 'btn btn-success float-right' %>
+      <%= link_to t('users.show.edit'), edit_user_path(@user), class: 'btn btn-success float-right' %>
+      <!-- パスワード変更ページへのリンク -->
+      <%= link_to t('users.show.change_password'), edit_password_user_path(@user), class: 'btn btn-primary mt-3' %>
     </div>
   </div>
 </div>
